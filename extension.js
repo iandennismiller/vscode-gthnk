@@ -25,7 +25,7 @@ function activate(context) {
 			var dd = String(today.getDate()).padStart(2, '0');
 			var mm = String(today.getMonth() + 1).padStart(2, '0');
 			var yyyy = today.getFullYear();
-			var insert_str = yyyy + '-' + mm + '-' + dd + "\n";
+			var insert_str = yyyy + '-' + mm + '-' + dd + "\n\n";
 
 			var linecount = editor.document.lineCount;
 			editor.edit((eb) => eb.insert(new vscode.Position(linecount), insert_str));
@@ -41,7 +41,7 @@ function activate(context) {
 			var today = new Date();
 			var hh = String(today.getHours()).padStart(2, '0');
 			var mm = String(today.getMinutes()).padStart(2, '0');
-			var insert_str = "\n" + hh + mm + "\n\n";
+			var insert_str = hh + mm + "\n\n";
 
 			var linecount = editor.document.lineCount;
 			editor.edit((eb) => eb.insert(new vscode.Position(linecount), insert_str));

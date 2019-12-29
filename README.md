@@ -24,6 +24,10 @@ docker run -d \
     iandennismiller/gthnk
 ```
 
+## Changelog
+
+See the [Changelog](CHANGELOG.md) for an itemized list
+
 ### For more information
 
 - [Gthnk Website](http://gthnk.com)
