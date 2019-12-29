@@ -2,7 +2,7 @@
 	"name": "gthnk",
 	"displayName": "Gthnk",
 	"description": "Support for Gthnk, the journal and thinking companion.",
-	"publisher": "iandennismiller",
+	"publisher": "IanDennisMiller",
 	"repository": "https://github.com/iandennismiller/vscode-gthnk",
 	"version": "0.0.1",
 	"engines": {
