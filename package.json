@@ -2,6 +2,8 @@
 	"name": "gthnk",
 	"displayName": "Gthnk",
 	"description": "Support for Gthnk, the journal and thinking companion.",
+	"publisher": "iandennismiller",
+	"repository": "https://github.com/iandennismiller/vscode-gthnk",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.41.0"
@@ -10,14 +12,33 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.insertDate",
+		"onCommand:extension.insertTime"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.insertDate",
+				"title": "Insert Date"
+			},
+			{
+				"command": "extension.insertTime",
+				"title": "Insert Time"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.insertDate",
+				"key": "ctrl+alt+start+n",
+				"mac": "ctrl+alt+cmd+n",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "extension.insertTime",
+				"key": "ctrl+alt+start+m",
+				"mac": "ctrl+alt+cmd+m",
+				"when": "editorTextFocus"
 			}
 		]
 	},

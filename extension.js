@@ -17,14 +17,41 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	let disposable1 = vscode.commands.registerCommand('extension.insertDate', function () {
+		const editor = vscode.window.activeTextEditor;
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
+		if (editor) {
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0');
+			var yyyy = today.getFullYear();
+			var insert_str = yyyy + '-' + mm + '-' + dd + "\n";
+
+			var linecount = editor.document.lineCount;
+			editor.edit((eb) => eb.insert(new vscode.Position(linecount), insert_str));
+
+			vscode.window.setStatusBarMessage('Gthnk: insert date', 500);
+		}
 	});
 
-	context.subscriptions.push(disposable);
+	let disposable2 = vscode.commands.registerCommand('extension.insertTime', function () {
+		const editor = vscode.window.activeTextEditor;
+
+		if (editor) {
+			var today = new Date();
+			var hh = String(today.getHours()).padStart(2, '0');
+			var mm = String(today.getMinutes()).padStart(2, '0');
+			var insert_str = "\n" + hh + mm + "\n\n";
+
+			var linecount = editor.document.lineCount;
+			editor.edit((eb) => eb.insert(new vscode.Position(linecount), insert_str));
+
+			vscode.window.setStatusBarMessage('Gthnk: insert time', 500);
+		}
+	});
+
+	context.subscriptions.push(disposable1);
+	context.subscriptions.push(disposable2);
 }
 exports.activate = activate;
 
