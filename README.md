@@ -1,6 +1,6 @@
 # Gthnk integration for VS Code
 
-This VS Code extension provides [Gthnk](http://gthnk.com) integration.
+This VS Code extension provides [Gthnk](http://www.gthnk.com) integration.
 
 ## Features
 
@@ -13,20 +13,23 @@ For Windows machines, use the `Windows key` instead of `Cmd`.
 
 ## Requirements
 
-This extension requires [Gthnk](http://gthnk.com) to be installed.
+This extension requires [Gthnk](http://www.gthnk.com) to be installed.
 
 Gthnk runs inside a Docker container:
 
 ```
-docker run -d \
+docker run -d --rm \
+    --name gthnk \
     -p 1620:1620 \
-    -v ~/.gthnk:/home/gthnk/.gthnk \
+    -v ~/.gthnk:/home/gthnk/storage \
     iandennismiller/gthnk
 ```
 
+Now connect to http://localhost:1620 and log in with the username `user@example.com` and the password `secret`.
+
 ## Changelog
 
-See the [Changelog](CHANGELOG.md) for an itemized list
+See the [Changelog](CHANGELOG.md) for an itemized list of changes.
 
 ### For more information
 
