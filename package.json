@@ -4,7 +4,7 @@
 	"description": "Support for Gthnk, the journal and thinking companion.",
 	"publisher": "IanDennisMiller",
 	"repository": "https://github.com/iandennismiller/vscode-gthnk",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
